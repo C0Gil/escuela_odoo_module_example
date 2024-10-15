@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="action_open_school" model="ir.actions.act_window">
+        <field  name="name">Escuela</field>
+        <field  name="res_model">subject</field>
+        <field  name="view_mode">tree,form</field>
+    </record>
+    
+    <record id="action_open_teacher" model="ir.actions.act_window">
+        <field  name="name">Maestro</field>
+        <field  name="res_model">teacher</field>
+        <field  name="view_mode">tree,form</field>
+    </record>
+    
+    <record id="action_open_student" model="ir.actions.act_window">
+        <field  name="name">Alumno</field>
+        <field  name="res_model">student</field>
+        <field  name="view_mode">tree,form</field>
+    </record>
+
+    <!-- ROOT ID Menu -->
+    <menuitem id="school_menu_root" name="Escuela"/>
+
+    <!-- Subject Menu -->
+    <menuitem id="subject_menu" name="Materias" 
+        parent="school_menu_root"/>
+    
+    <menuitem id="subject_subject_menu" name="Materias" 
+        parent="subject_menu"
+        action="action_open_school"/>
+
+    <!-- Teacher Menu -->
+    <menuitem id="teacher_menu" name="Maestros" 
+        parent="school_menu_root"/>
+    
+    <menuitem id="teacher_teacher_menu" name="Maestros" 
+        parent="teacher_menu"
+        action="action_open_teacher"/>
+
+    <!-- Student Menu -->
+    <menuitem id="student_menu" name="Alumnos" 
+        parent="school_menu_root"/>
+    
+    <menuitem id="student_student_menu" name="Alumnos" 
+        parent="student_menu"
+        action="action_open_student"/>
+
+</odoo>

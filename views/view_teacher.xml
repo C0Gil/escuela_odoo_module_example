@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    
+    <record id="view_teacher_form" model="ir.ui.view">
+        <field name="name">View.form.teacher</field>
+        <field name="model">teacher</field>
+        <field name="arch" type="xml">
+            <form class="p-1">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" class="o_field_widget o_required_modifier o_field_char"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="teacher_card" />
+                        </group>
+                        <group>
+                            <field name="school_id" options="{'no_create': True, 'no_edit': True}"/>
+                        </group>
+                    </group>
+                </sheet>
+
+                <div class="oe_chatter"> 
+                    <field name="message_follower_ids" />
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>                    
+                </div>
+
+            </form>
+        </field>
+    </record>
+
+    <record id="view_teacher_tree" model="ir.ui.view">
+        <field name="name">View.tree.teacher</field>
+        <field name="model">teacher</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="teacher_card"/>
+                <field name="school_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_teacher_search" model="ir.ui.view">
+        <field name="name">View.search.teacher</field>
+        <field name="model">teacher</field>
+        <field name="arch" type="xml">
+            <search>                
+                <field name="school_id"/>
+                
+                <!-- <filter name="active_state" string="Clases inactivas" domain="[('school_id', '=', 'inactiva')]"/> -->
+            </search>
+        </field>
+    </record>
+</odoo>

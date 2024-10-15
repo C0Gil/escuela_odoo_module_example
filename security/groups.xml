@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+
+<odoo>
+    <record id="module_category_school_exdoo" model="ir.module.category">
+        <field name="name">Exdoo school</field>
+        <field name="sequence">1</field>
+    </record>
+
+    <record id="module_category_school_exdoo_scndry" model="ir.module.category">
+        <field name="name">Exdoo school</field>
+        <field name="sequence">1</field>
+        <field name="parent_id" ref="module_category_school_exdoo"/>
+    </record>
+
+
+    <record id="group_exdoo_school_user" model="res.groups">
+        <field name="name">Usuario</field>
+        <field name="category_id" ref="module_category_school_exdoo_scndry"/>
+    </record>
+
+    <record id="group_exdoo_school_admin" model="res.groups">
+        <field name="name">Administrador</field>
+        <field name="category_id" ref="module_category_school_exdoo_scndry"/>
+        <field name="implied_ids" eval="[(4, ref('group_exdoo_school_user'))]"/>
+    </record>
+
+</odoo>

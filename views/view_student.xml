@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_student_form" model="ir.ui.view">
+        <field name="name">View.form.student</field>
+        <field name="model">student</field>
+        <field name="arch" type="xml">
+            <form class="p-1">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" class="o_field_widget o_required_modifier o_field_char"/>
+                        </h1>
+                    </div>
+
+                    <group>
+                        <group>
+                            <field name="grade"/>
+                            <field name="age"/>
+                        </group>
+                        <group>
+                            <field name="student_num"/>
+                            <field name="school_id" options="{'no_create': True, 'no_edit': True}"/>
+                        </group>
+                    </group>
+                </sheet>
+
+                <div class="oe_chatter"> 
+                    <field name="message_follower_ids" />
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>                    
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_student_tree" model="ir.ui.view">
+        <field name="name">View.tree.student</field>
+        <field name="model">student</field>
+        <field name="arch" type="xml">
+            <tree class="p-1">
+                <field name="name"/>
+                <field name="grade"/>
+                <field name="age"/>
+                <field name="student_num"/>
+                <field name="school_id"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="view_student_search" model="ir.ui.view">
+        <field name="name">View.search.student</field>
+        <field name="model">student</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="grade"/>
+                <field name="age"/>
+                <field name="school_id"/>
+
+                <filter name="student_grede" string="Alumnos de primero" domain="[('grade', '=', 'primero')]"/>
+                <filter name="student_grede" string="Alumnos de segundo" domain="[('grade', '=', 'segundo')]"/>
+                <filter name="student_grede" string="Alumnos de tercero" domain="[('grade', '=', 'tercero')]"/>
+            </search>
+        </field>
+    </record>
+</odoo>

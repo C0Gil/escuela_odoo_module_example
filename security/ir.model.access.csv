@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+school_user_access_subject,user access_subject,model_subject,group_exdoo_school_user,1,1,1,1
+school_user_access_subject_student,user access_subject_student,model_student_subject,group_exdoo_school_user,1,1,1,1
+school_user_access_teacher,user access_teacher,model_teacher,group_exdoo_school_user,1,1,1,1
+school_user_access_student,user access_student,model_student,group_exdoo_school_user,1,1,1,1
+
+access_admin_exdoo_request,admin access_subject,model_subject,group_exdoo_school_admin,1,1,1,1
+school_admin_access_subject_student,admin access_subject_student,model_student_subject,group_exdoo_school_admin,1,1,1,1
+school_admin_access_teacher,admin access_teacher,model_teacher,group_exdoo_school_admin,1,1,1,1
+school_admin_access_student,admin access_student,model_student,group_exdoo_school_admin,1,1,1,1
